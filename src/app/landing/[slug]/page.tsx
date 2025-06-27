@@ -17,7 +17,7 @@ interface PageProps {
 export async function generateStaticParams() {
   try {
     const data:any = await safeGraphQLRequest(GET_ALL_PAGES_QUERY);
-    const pages = data?.pageCollection?.items || [];
+    const pages :any= data?.pageCollection?.items || [];
 
     return pages
       .filter((page: any) => page?.slug)
