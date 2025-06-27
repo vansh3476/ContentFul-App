@@ -7,7 +7,7 @@ import { autosaveMiddleware } from "./middleware"
  * thenable/null errors).
  * Autosave middleware still syncs the layout to Contentful.
  */
-export const store = configureStore({
+export const store:any = configureStore({
   reducer: {
     layout: layoutReducer,
   },

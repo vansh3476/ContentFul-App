@@ -16,7 +16,7 @@ interface PageProps {
 
 export async function generateStaticParams() {
   try {
-    const data = await safeGraphQLRequest(GET_ALL_PAGES_QUERY);
+    const data:any = await safeGraphQLRequest(GET_ALL_PAGES_QUERY);
     const pages = data?.pageCollection?.items || [];
 
     return pages
@@ -36,7 +36,7 @@ export async function generateMetadata({
   const { slug } = await params;
 
   try {
-    const data = await safeGraphQLRequest(GET_PAGE_QUERY, { slug });
+    const data:any= await safeGraphQLRequest(GET_PAGE_QUERY, { slug });
     console.log(
       JSON.stringify(data?.pageCollection?.items?.[0]),
       "data11313111"
@@ -64,8 +64,8 @@ export default async function LandingPage({ params }: PageProps) {
   const { slug } = await params;
 
   try {
-    const data = await safeGraphQLRequest(GET_PAGE_QUERY, { slug });
-    const page: PageContent = data?.pageCollection?.items?.[0];
+    const data:any = await safeGraphQLRequest(GET_PAGE_QUERY, { slug });
+    const page:any = data?.pageCollection?.items?.[0];
 
     if (!page) {
       notFound();
@@ -143,7 +143,7 @@ export default async function LandingPage({ params }: PageProps) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <main>
-          {sortedComponents.map((component, index) =>
+          {sortedComponents.map((component:any, index:number) =>
             renderComponent(component, index)
           )}
         </main>

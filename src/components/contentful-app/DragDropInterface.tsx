@@ -35,7 +35,7 @@ export default function DragDropInterface() {
 
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault()
-    if (draggedItem && !layoutItems.find((item) => item.id === draggedItem.id)) {
+    if (draggedItem && !layoutItems.find((item:any) => item.id === draggedItem.id)) {
       dispatch(addLayoutItem(draggedItem))
     }
   }
@@ -79,7 +79,7 @@ export default function DragDropInterface() {
         <div className={styles.sidebar}>
           <h3>Available Components</h3>
           <div className={styles.componentList}>
-            {availableComponents.map((component) => (
+            {availableComponents.map((component:DragItem) => (
               <div
                 key={component.id}
                 className={styles.componentItem}
@@ -98,7 +98,7 @@ export default function DragDropInterface() {
             {layoutItems.length === 0 ? (
               <div className={styles.emptyState}>Drag components here to build your page</div>
             ) : (
-              layoutItems.map((item, index) => (
+              layoutItems.map((item:LayoutItem, index:number) => (
                 <LayoutItemComponent
                   key={item.id}
                   item={item}

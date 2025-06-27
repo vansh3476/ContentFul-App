@@ -7,7 +7,7 @@ export default function ImageGrid({ content }: any) {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.grid}>
-          {(content || []).slice(0, 4).map((image, index) => (
+          {(content || []).slice(0, 4).map((image:any, index:number) => (
             <div key={image.sys.id} className={styles.imageWrapper}>
               <Image
                 src={image.url || "/placeholder.svg"}
