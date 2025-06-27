@@ -16,9 +16,6 @@ export default function HomePage() {
           <Link href="/preview" className={styles.linkSecondary}>
             View Preview
           </Link>
-          <Link href="/demo" className={styles.linkSecondary}>
-            Demo Page
-          </Link>
           {/* Landing pages temporarily hidden until Contentful is configured */}
           <div className={styles.note}>
             <p>📝 Landing pages will be available once Contentful is properly configured</p>
